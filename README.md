@@ -1,0 +1,1 @@
+# Tarot-One-Card-Reading-eorzea
