@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#070811">
+    <meta
+      name="description"
+      content="通常タロット78枚から今のあなたへの1枚を引く、静かなOne Card Reading。"
+    >
+    <title>Tarot | One Card Reading</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="data/messages.js" defer></script>
+    <script src="js/cards.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">本文へ移動</a>
+    <div class="ambient ambient--cyan" aria-hidden="true"></div>
+    <div class="ambient ambient--magenta" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <p class="eyebrow">TAROT</p>
+      <h1>One Card Reading</h1>
+      <div class="sigil" aria-hidden="true"><span></span></div>
+    </header>
+
+    <main id="main-content" class="app-shell">
+      <section class="intro-panel" id="intro" aria-labelledby="intro-title">
+        <div class="intro-copy">
+          <p class="section-kicker">A QUIET MESSAGE FOR NOW</p>
+          <h2 id="intro-title">今のあなたへのメッセージを<br>1枚のカードから受け取ります。</h2>
+          <p>
+            気持ちを静かに整えてから、カードを1枚引いてください。
+            通常タロット78枚の中から、正位置・逆位置を含めてお届けします。
+          </p>
+        </div>
+        <button class="primary-button" id="draw-button" type="button">
+          <span>カードを1枚引く</span>
+          <span class="button-glyph" aria-hidden="true">◇</span>
+        </button>
+      </section>
+
+      <section class="reading" id="reading" aria-labelledby="reading-title" hidden>
+        <div class="reading-heading">
+          <p class="section-kicker">YOUR CARD</p>
+          <h2 id="reading-title">カードをめくってください</h2>
+          <p id="reading-instruction">伏せられたカードに触れると、今回の1枚が開きます。</p>
+        </div>
+
+        <div class="reading-layout">
+          <div class="card-column">
+            <button class="tarot-card" id="card-button" type="button" aria-label="カードをめくる" aria-pressed="false">
+              <span class="card-inner">
+                <span class="card-face card-back" aria-hidden="true">
+                  <span class="card-back-frame">
+                    <span class="back-monogram">CY</span>
+                    <img src="assets/cards/card-back.webp" alt="" class="card-back-image">
+                  </span>
+                </span>
+                <span class="card-face card-front" aria-hidden="true">
+                  <span class="card-art" id="card-art">
+                    <span class="image-placeholder">
+                      <span>CARD IMAGE</span>
+                      <strong id="placeholder-name">COMING SOON</strong>
+                    </span>
+                    <img id="card-image" class="card-image" alt="">
+                  </span>
+                </span>
+              </span>
+            </button>
+
+            <button class="secondary-button flip-button" id="flip-button" type="button">
+              カードをめくる
+            </button>
+          </div>
+
+          <article class="reading-result" id="result" aria-labelledby="result-title" hidden>
+            <div class="result-heading">
+              <p class="section-kicker">YOUR READING</p>
+              <h2 id="result-title">今回のリーディング</h2>
+            </div>
+
+            <div class="card-identity">
+              <h3 id="card-name-en"></h3>
+              <p id="card-name-ja"></p>
+              <p class="orientation" id="orientation"></p>
+            </div>
+
+            <div class="reading-block">
+              <h4>キーワード</h4>
+              <p id="keywords"></p>
+            </div>
+
+            <div class="reading-block message-block">
+              <h4>メッセージ</h4>
+              <p id="message"></p>
+            </div>
+
+            <div class="text-output">
+              <div class="text-output-heading">
+                <h4>結果テキスト</h4>
+                <div class="result-actions">
+                  <button class="copy-button" id="copy-button" type="button">結果をコピー</button>
+                  <button class="copy-button" id="image-save-button" type="button" disabled>結果を画像で保存</button>
+                </div>
+              </div>
+              <textarea id="result-text" aria-label="今回の1枚引き結果" readonly></textarea>
+              <p class="copy-status" id="copy-status" aria-live="polite"></p>
+              <p class="copy-status" id="image-status" aria-live="polite"></p>
+              <a class="image-open-link" id="image-open-link" target="_blank" rel="noopener" hidden>PNG画像を開く</a>
+            </div>
+
+            <button class="secondary-button redraw-button" id="redraw-button" type="button">
+              もう一度引く
+            </button>
+          </article>
+        </div>
+
+        <p class="reading-status" id="reading-status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>78 Cards · One Card Reading</p>
+      <p class="footer-credit">Created by 鱗の旅人　© SQUARE ENIX</p>
+    </footer>
+  </body>
+</html>
